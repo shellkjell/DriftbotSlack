@@ -1,0 +1,12 @@
+{
+  "name": "slack_driftbot",
+  "version": "1.0.0",
+  "description": "A bot, relays messages from users to a specific channel",
+  "dependencies": {
+    "botkit": "^0.6.14",
+    "cross-env": "^5.1.4"
+  },
+  "scripts": {
+    "start": "node ./app.js"
+  }
+}
