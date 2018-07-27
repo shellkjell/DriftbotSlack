@@ -1,9 +1,8 @@
 # Driftbot
 
 ### Prerequisites
-* Linux distro using apt for package management
-* Officially supported `docker.io`
-* `moreutils build-essential make git`
+* NodeJS with support for ES6
+* Docker
 
 ## Quickstart on Ubuntu/Debian
 * `git clone https://github.com/techbuddyab/slackdriftbot && cd slackdriftbot && make build`
