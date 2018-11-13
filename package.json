@@ -2,11 +2,20 @@
   "name": "slack_driftbot",
   "version": "1.0.0",
   "description": "A bot, relays messages from users to a specific channel",
+  "babel": {
+    "presets": ["env"],
+    "plugins": []
+  },
   "dependencies": {
     "botkit": "^0.6.14",
     "cross-env": "^5.1.4"
   },
   "scripts": {
-    "start": "node ./app.js"
+    "build": "babel app -d dist",
+    "start": "node dist/app.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
