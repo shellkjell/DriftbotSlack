@@ -1,15 +1,18 @@
-FROM node:carbon
+FROM node:carbon-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
+# Copy needed files
+COPY app/ ./app/
+COPY bootstrap-app.sh ./
+COPY .env ./
 COPY package*.json ./
 
+# Latest npm and install all deps
 RUN npm i npm@latest -g
 RUN npm i
 
-# Copy contents of this dir to new app dir
-COPY . .
-
+# Run our bootstrap
 RUN ./bootstrap-app.sh
 
 CMD ["npm", "start"]

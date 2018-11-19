@@ -9,17 +9,12 @@ if (!process.env.TOKEN || !process.env.ACTIVE_ADMIN_PASSWORD || !process.env.DRI
     process.exit(1)
 }
 
-var Botkit = require('botkit')
-var os = require('os')
+import Bot from './models/Bot';
 
-var controller = Botkit.slackbot({
-    debug: false,
-    require_delivery: true
-})
+const bot = new Bot();
 
-var bot = controller.spawn({
-    token: process.env.TOKEN
-}).startRTM()
+import applyListenEvents from './listenEvents';
+import applyListenWords from './listenWords';
 
-require('./listenEvents')(controller)
-require('./listenWords')(controller)
+applyListenEvents(bot);
+applyListenWords(bot);

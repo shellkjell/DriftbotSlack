@@ -1,7 +1,6 @@
 # Driftbot
 
 ### Prerequisites
-* NodeJS with support for ES6
 * Docker
 
 ## Quickstart on Ubuntu/Debian
